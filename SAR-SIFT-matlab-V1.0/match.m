@@ -41,15 +41,15 @@ cor22=cor22(sort(i)',:);
 [solution,rmse,cor1,cor2]=FSC(cor11,cor22,change_form,1);
 fprintf('After FSC found %d matches.\n', size(cor1,1));
 button=appendimages(im2,im1,cor2,cor1);
-str1=['.\save_image\','After FSC right match','.jpg'];
-saveas(button,str1,'jpg');
+%str1=['.\save_image\','After FSC right match','.jpg'];
+%saveas(button,str1,'jpg');
 
 %% 
-[button1,button2]=showpoints(im2,im1,cor2,cor1);
-str1=['.\save_image\','Image to be registered right points','.jpg'];
-saveas(button1,str1,'jpg');
-str1=['.\save_image\','Reference right points','.jpg'];
-saveas(button2,str1,'jpg');
+%[button1,button2]=showpoints(im2,im1,cor2,cor1);
+%str1=['.\save_image\','Image to be registered right points','.jpg'];
+%saveas(button1,str1,'jpg');
+%str1=['.\save_image\','Reference right points','.jpg'];
+%saveas(button2,str1,'jpg');
 
 %% 
 cor1=cor1(:,1:5);

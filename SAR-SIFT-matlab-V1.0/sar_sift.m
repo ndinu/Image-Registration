@@ -14,17 +14,8 @@ function [matches] = sar_sift(image1, image2)
 close all;
 
 %% read image
-disp(image1);
-disp(image2);
 image_1=imread(image1);
 image_2=imread(image2);
-
-figure();
-imshow(image_1);
-B = imrotate(image_1,30);
-
-figure();
-imshow(B);
 
 %% make file for save images
 if (exist('save_image','dir')==0)%如果文件夹不存在

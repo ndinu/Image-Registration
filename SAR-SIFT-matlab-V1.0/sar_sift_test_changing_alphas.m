@@ -13,13 +13,13 @@ base_image = './../test images/Shapes/shapes_a1=-1,5_g1=1,0_a2=-2,0_g2=1,0_L=1_i
 alpha1= "-1,5";
 gamma1= "1,0";
 gamma2= "1,0";
-
+array_matches = zeros(is,1);
 for alpha= 1:size(alphas,2)
     for l= 1:size(Ls,2)
         for i = 0:is-1
-            current_image = strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'g1=',gamma1,'_a2=',num2str(alpha),',0_g2=',gamma2,'_L=',num2str(l),'_i=',num2str(i),'.png'],"");
-            [matches] = sar_sift(base_image, current_image);
-            array_matches(i+1) = matches;
+            current_image = strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'_g1=',gamma1,'_a2=',num2str(alphas(alpha)),',0_g2=',gamma2,'_L=',num2str(Ls(l)),'_i=',num2str(i),'.png'],"");
+            [matches_quantity] = sar_sift(base_image, char(current_image));
+            array_matches(i+1) = matches_quantity;
         end
         
         

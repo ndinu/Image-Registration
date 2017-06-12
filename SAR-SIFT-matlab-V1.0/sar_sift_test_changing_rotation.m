@@ -10,3 +10,12 @@ is = 10;
 %Change to ideal SAR IMAGE
 base_image = "./../test images/Shapes/shapes_a1=-1,5_g1=1,0_a2=-2,0_g2=1,0_L=1_i=0.png" 
 
+
+
+
+figure();
+imshow(image_1);
+B = imrotate(image_1,30);
+
+figure();
+imshow(B);

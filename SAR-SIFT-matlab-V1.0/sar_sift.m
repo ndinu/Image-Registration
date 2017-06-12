@@ -9,15 +9,22 @@
 %  version：SAR-SIFT-matlab-V1.0
 %  In the future, we will release the c++ version.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function [matches] = sar_sift(image1, image2)
 
-clear all;
 close all;
 
 %% read image
-[filename,pathname]=uigetfile({'*.*','All Files(*.*)'},'选择参考图像和待配准图像',...
-                          'F:\class_file\图像配准\图像配准','MultiSelect','on');
-image_1=imread(strcat(pathname,filename{1}));
-image_2=imread(strcat(pathname,filename{2}));
+disp(image1);
+disp(image2);
+image_1=imread(image1);
+image_2=imread(image2);
+
+figure();
+imshow(image_1);
+B = imrotate(image_1,30);
+
+figure();
+imshow(B);
 
 %% make file for save images
 if (exist('save_image','dir')==0)%如果文件夹不存在
@@ -85,7 +92,7 @@ disp(['Calculating ：',num2str(toc),'s']);
 
 %% match
 tic;
-[solution,rmse,cor1,cor2]=match(image_2, image_1,descriptors_2,locs_2,descriptors_1,locs_1,change_form);
+[solution,rmse,cor1,cor2,matches]=match(image_2, image_1,descriptors_2,locs_2,descriptors_1,locs_1,change_form);
 disp(['points match spend time：',num2str(toc),'s']); 
 
 %% Calculation model parameters
@@ -110,5 +117,5 @@ disp(['points match spend time：',num2str(toc),'s']);
 
 t2=clock;
 disp(['Total time：',num2str(etime(t2,t1)),'s']); 
-
+end
 

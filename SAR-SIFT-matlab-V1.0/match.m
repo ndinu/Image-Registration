@@ -1,4 +1,4 @@
-function [solution,rmse,cor1,cor2]= match(im1, im2,des1,loc1,des2,loc2,change_form)
+function [solution,rmse,cor1,cor2,matches]= match(im1, im2,des1,loc1,des2,loc2,change_form)
 
 distRatio = 0.9;   
 des2t = des2';   
@@ -52,6 +52,7 @@ button=appendimages(im2,im1,cor2,cor1);
 %saveas(button2,str1,'jpg');
 
 %% 
+matches = size(cor1,1);
 cor1=cor1(:,1:5);
 cor2=cor2(:,1:5);
 

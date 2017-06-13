@@ -9,13 +9,19 @@
 %  version：SAR-SIFT-matlab-V1.0
 %  In the future, we will release the c++ version.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [matches] = sar_sift(image1, image2)
+function [matches] = sar_sift(image1, image2, angle)
 
 close all;
 
 %% read image
 image_1=imread(image1);
 image_2=imread(image2);
+
+if(nargin<3)
+    angle = 0;
+end
+angle
+image_2=imrotate(image_2,angle);
 
 %% make file for save images
 if (exist('save_image','dir')==0)%如果文件夹不存在

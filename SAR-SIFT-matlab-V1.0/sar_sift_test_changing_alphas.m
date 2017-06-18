@@ -5,10 +5,9 @@ alpha1 = -1.5;
 gamma1 = 1;
 
 alphas = [-3, -5, -8, -11, -14, -17, -20];
-gammas = [0.1, 1, 10, 100, 1000];
 Ls = [1, 3, 5, 8];
 angles = [0, 45, 90, 135, 180, 225, 270, 315];
-is = 10;
+is = 50;
 %Change to ideal SAR IMAGE
 base_image = './../test images/Shapes/shapes_a1=-1,5_g1=1,0_a2=-20,0_g2=1,0_L=8_i=399.png';
 alpha1= "-1,5";
@@ -33,4 +32,4 @@ for alpha= 1:size(alphas,2)
 end
 
 datos
-csvwrite('alpha_changes.csv',datos)
+csvwrite('sar_sift_alpha_changes.csv',datos)

@@ -29,4 +29,4 @@ for gamma= 1:size(gammas,2)
 end
 
 datos
-csvwrite('gamma_changes.csv',datos)
+csvwrite('sar_sift_gamma_changes.csv',datos)

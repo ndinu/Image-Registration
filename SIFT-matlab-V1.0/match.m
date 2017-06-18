@@ -1,4 +1,4 @@
-function [solution,rmse,cor1,cor2]=match(im1, im2,des1,loc1,des2,loc2,change_form)
+function [solution,rmse,cor1,cor2, matches]=match(im1, im2,des1,loc1,des2,loc2,change_form)
 
 distRatio =0.9;   
 M_des2=size(des2,1);
@@ -35,16 +35,16 @@ button=appendimages(im2,im1,cor2,cor1);
 str1=['.\save_image\','After FSC right match points','.jpg'];
 saveas(button,str1,'jpg');
 fprintf('After FSC Found %d matches.\n', size(cor1,1));
-[button1,button2]=showpoints(im2,im1,cor2,cor1);
-str1=['.\save_image\','Reference after FSC right points','.jpg'];
-saveas(button1,str1,'jpg');
-str1=['.\save_image\','The image to be registered FSC right points','.jpg'];
-saveas(button2,str1,'jpg');
+matches = size(cor1,1);
+%[button1,button2]=showpoints(im2,im1,cor2,cor1);
+%str1=['.\save_image\','Reference after FSC right points','.jpg'];
+%saveas(button1,str1,'jpg');
+%str1=['.\save_image\','The image to be registered FSC right points','.jpg'];
+%saveas(button2,str1,'jpg');
 
 %% 输出【x,y,组，层，尺度，角度】保存下来
 cor1=cor1(:,1:6);
 cor2=cor2(:,1:6);
-
 
 
 

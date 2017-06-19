@@ -3,7 +3,7 @@ clear all;
 
 gammas = [0.1, 1, 10, 100, 1000];
 Ls = [1, 3, 5, 8];
-is = 10;
+is = 50;
 %Change to ideal SAR IMAGE
 base_image = './../test images/Shapes/shapes_a1=-1,5_g1=1,0_a2=-20,0_g2=1,0_L=8_i=399.png';
 alpha1= "-1,5";

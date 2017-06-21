@@ -15,9 +15,16 @@ datos = zeros(size(angles,2)*size(Ls,2),4);
 for angle= 1:size(angles,2)
     for l= 1:size(Ls,2)
         for i = 0:is-1
-            current_image = strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'_g1=',gamma1,'_a2=',alpha2,'_g2=',gamma2,'_L=',num2str(Ls(l)),'_i=',num2str(i),'.png'],"");
-            [matches_quantity] = sift(base_image, char(current_image), angles(angle));
-            array_matches(i+1) = matches_quantity;
+            try
+                current_image = strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'_g1=',gamma1,'_a2=',alpha2,'_g2=',gamma2,'_L=',num2str(Ls(l)),'_i=',num2str(i),'.png'],"");
+                [matches_quantity] = sift(base_image, char(current_image), angles(angle));
+                array_matches(i+1) = matches_quantity;
+            catch
+                array_matches(i+1) = 0;
+            end
+            angle
+            l
+            i
         end
         deviation = std(array_matches);
         average = mean(array_matches);

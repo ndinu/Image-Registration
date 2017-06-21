@@ -31,9 +31,9 @@ cor1=cor1(sort(i)',:);cor2=cor2(sort(i)',:);
 
 %% FSC
 [solution,rmse,cor1,cor2]=FSC(cor1,cor2,change_form,1);
-button=appendimages(im2,im1,cor2,cor1);
-str1=['.\save_image\','After FSC right match points','.jpg'];
-saveas(button,str1,'jpg');
+%button=appendimages(im2,im1,cor2,cor1);
+%str1=['.\save_image\','After FSC right match points','.jpg'];
+%saveas(button,str1,'jpg');
 fprintf('After FSC Found %d matches.\n', size(cor1,1));
 matches = size(cor1,1);
 %[button1,button2]=showpoints(im2,im1,cor2,cor1);

@@ -8,7 +8,7 @@ is = 50;
 base_image = './../test images/Shapes/shapes_a1=-1,5_g1=1,0_a2=-20,0_g2=1,0_L=8_i=399.png';
 alpha1= "-1,5";
 gamma1= "1,0";
-alpha2= "-3,0";
+alpha2= "-20,0";
 array_matches = zeros(is,1);
 datos = zeros(size(gammas,2)*size(Ls,2),4);
 for gamma= 1:size(gammas,2)

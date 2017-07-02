@@ -21,6 +21,9 @@ for alpha= 1:size(alphas,2)
             current_image = strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'_g1=',gamma1,'_a2=',num2str(alphas(alpha)),',0_g2=',gamma2,'_L=',num2str(Ls(l)),'_i=',num2str(i),'.png'],"");
             [matches_quantity] = sift(base_image, char(current_image));
             array_matches(i+1) = matches_quantity;
+            alpha
+            l
+            i
         end
         deviation = std(array_matches);
         average = mean(array_matches);

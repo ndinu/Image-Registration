@@ -14,7 +14,7 @@ datos = zeros(size(gammas,2)*size(Ls,2),4);
 for gamma= 1:size(gammas,2)
     for l= 1:size(Ls,2)
         for i = 0:is-1
-            strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'_g1=',gamma1,'_a2=',alpha2,'_g2=',strrep(strcat([strrep(num2str(gammas(gamma)),'.',','),',0']),',1,0',',1'),'_L=',num2str(Ls(l)),'_i=',num2str(i),'.png'],"")
+            strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'_g1=',gamma1,'_a2=',alpha2,'_g2=',strrep(strcat([strrep(num2str(gammas(gamma)),'.',','),',0']),',1,0',',1'),'_L=',num2str(Ls(l)),'_i=',num2str(i),'.png'],"");
             current_image = strjoin(['./../test images/Shapes/shapes_a1=',alpha1,'_g1=',gamma1,'_a2=',alpha2,'_g2=',strrep(strcat([strrep(num2str(gammas(gamma)),'.',','),',0']),',1,0',',1'),'_L=',num2str(Ls(l)),'_i=',num2str(i),'.png'],"");
             [matches_quantity] = sift(base_image, char(current_image));
             array_matches(i+1) = matches_quantity;
